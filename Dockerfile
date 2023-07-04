@@ -1,2 +1,6 @@
-FROM tomcat:9.0
-LABEL maintainer="saikumar <v.saikumar313@gmail.com>"
+FROM node:latest
+WORKDIR /usr/src/app
+COPY nodeapp/* /
+RUN npm install
+EXPOSE 3000
+CMD [ "npm","start" ]
