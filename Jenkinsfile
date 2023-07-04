@@ -28,12 +28,12 @@ pipeline {
         }
         stage('pull image') {
             steps{
-                sh 'docker pull saikumar313/nodeapp1:5'
+                sh 'docker pull saikumar313/nodeapp1:$BUILD_NUMBER'
             }
         }
       stage('run image') {
             steps{
-                sh 'docker run -d -p 443:80 saikumar313/nodeapp1:5'
+                sh 'docker run -d -p 80:80 saikumar313/nodeapp1:$BUILD_NUMBER'
             }
         }   
 }
