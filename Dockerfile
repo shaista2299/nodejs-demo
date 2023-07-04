@@ -1,2 +1,2 @@
-FROM tomcat:9.0
-LABEL maintainer="saikumar <v.saikumar313@gmail.com>"
+FROM nginx
+COPY index.html /usr/share/nginx/html
