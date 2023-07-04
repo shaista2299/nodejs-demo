@@ -26,6 +26,16 @@ pipeline {
                 sh 'docker push saikumar313/nodeapp1:$BUILD_NUMBER'
             }
         }
+        stage('pull image') {
+            steps{
+                sh 'docker pull saikumar313/nodeapp1:5'
+            }
+        }
+      stage('run image') {
+            steps{
+                sh 'docker run -d -p 443:80 saikumar313/nodeapp1:5'
+            }
+        }   
 }
 post {
         always {
