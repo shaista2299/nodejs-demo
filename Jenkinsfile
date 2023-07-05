@@ -1,4 +1,3 @@
-
 pipeline {
     agent any 
     environment {
@@ -33,7 +32,7 @@ pipeline {
         }
       stage('run image') {
             steps{
-                sh 'docker run -d -p 84:80 saikumar313/nodeapp1:$BUILD_NUMBER'
+                sh 'docker run -d -p 443:80 saikumar313/nodeapp1:$BUILD_NUMBER'
             }
         }   
 }
